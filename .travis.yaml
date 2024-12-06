@@ -1,9 +1,15 @@
 language: node_js
 node_js:
-  - "14"  # Use your version of Node.js
-
-install:
-  - npm install
+  - '16'  # Make sure this matches your Node.js version
 
 script:
-  - npm test -- --coverage  # Run your tests and collect coverage
+  - npm install
+  - npm test -- --coverage
+
+deploy:
+  provider: firebase
+  token:
+    secure: 1//059t9SxcEtLXQCgYIARAAGAUSNwF-L9IrCz8SJ6hakKN041zkEoHA2vx431dMK2z1_16Bchai6WTVFsvtGYBqsyo0lG3DWT8S09I  # Replace this with your token
+  skip_cleanup: true
+  on:
+    branch: master
