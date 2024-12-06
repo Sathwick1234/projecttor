@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+  - "14"  # Use your version of Node.js
+
+install:
+  - npm install
+
+script:
+  - npm test -- --coverage  # Run your tests and collect coverage
